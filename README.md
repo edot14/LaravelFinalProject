@@ -6,6 +6,8 @@ This is a job listing web application built with Laravel, Tailwind CSS, and Vite
 
 Prerequisites:
 
+---
+
 Ensure you have the following installed before proceeding:
 
 PHP 8.x
@@ -18,45 +20,32 @@ Git
 
 Laravel 11
 
+---
+
 Installation: 
 
 1. Clone the Repository
    
-    sh
-    Copy
-    Edit
     git clone https://github.com/edot14/LaravelFinalProject.git  
     cd LaravelFinalProject
 
-3. Install PHP Dependencies:
+2. Install PHP Dependencies:
    
-    sh
-    Copy
-    Edit
     composer install
 
-4. Install JavaScript Dependencies:
+3. Install JavaScript Dependencies:
 
-    sh
-    Copy
-    Edit
     npm install  
 
-6. Install Tailwind CSS:
+4. Install Tailwind CSS:
    
-    sh
-    Copy
-    Edit
     npm install -D tailwindcss postcss autoprefixer  
     npx tailwindcss init -p
    
-8. Configure Tailwind CSS
+5. Configure Tailwind CSS
 
     Ensure your tailwind.config.js file includes:
     
-    js
-    Copy
-    Edit
     /** @type {import('tailwindcss').Config} */  
     export default {  
       content: [  
@@ -74,40 +63,36 @@ Installation:
 
 Duplicate the .env.example file and rename it to .env:
     
-    sh
-    Copy
-    Edit
-    cp .env.example .env  
-    Generate an application key:
-    
-    sh
-    Copy
-    Edit
+    cp .env.example .env 
+
+
+Generate an application key:
+  
     php artisan key:generate  
+    
     Set up your database in the .env file.
 
 7. Run Migrations & Seed Database:
    
-    sh
-    Copy
-    Edit
-    php artisan migrate --seed  
-    9. Run Vite & Start Development Server
-    sh
-    Copy
-    Edit
+    php artisan migrate --seed
+   
+8. Run Vite & Start Development Server
+   
     npm run dev  
-    php artisan serve  
-    Features
+    php artisan serve
+
+
+Features:
+
     Laravel 11 Backend
-
-Tailwind CSS for styling
-
-Job listings with categories
-
-Blade components for modular UI
-
-Dynamic filtering with Alpine.js
+    
+    Tailwind CSS for styling
+    
+    Job listings with categories
+    
+    Blade components for modular UI
+    
+    Dynamic filtering with Alpine.js
 
 Contribution
 Feel free to fork this project and submit pull requests!
