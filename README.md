@@ -26,38 +26,38 @@ Installation:
 
 1. Clone the Repository
    
-    git clone https://github.com/edot14/LaravelFinalProject.git  
-    cd LaravelFinalProject
+        git clone https://github.com/edot14/LaravelFinalProject.git  
+        cd LaravelFinalProject
 
 2. Install PHP Dependencies:
    
-    composer install
+        composer install
 
 3. Install JavaScript Dependencies:
 
-    npm install  
+        npm install  
 
 4. Install Tailwind CSS:
    
-    npm install -D tailwindcss postcss autoprefixer  
-    npx tailwindcss init -p
+        npm install -D tailwindcss postcss autoprefixer  
+        npx tailwindcss init -p
    
 5. Configure Tailwind CSS
 
     Ensure your tailwind.config.js file includes:
     
-    /** @type {import('tailwindcss').Config} */  
-    export default {  
-      content: [  
-        "./resources/**/*.blade.php",  
-        "./resources/**/*.js",  
-        "./resources/**/*.vue",  
-      ],  
-      theme: {  
-        extend: {},  
-      },  
-      plugins: [],  
-    }
+        /** @type {import('tailwindcss').Config} */  
+        export default {  
+          content: [  
+            "./resources/**/*.blade.php",  
+            "./resources/**/*.js",  
+            "./resources/**/*.vue",  
+          ],  
+          theme: {  
+            extend: {},  
+          },  
+          plugins: [],  
+        }
    
 6. Configure Environment:
 
@@ -74,28 +74,28 @@ Generate an application key:
 
 7. Run Migrations & Seed Database:
    
-    php artisan migrate --seed
+        php artisan migrate --seed
    
 8. Run Vite & Start Development Server
    
-    npm run dev  
-    php artisan serve
+        npm run dev  
+        php artisan serve
 
 
 Features:
 
-    Laravel 11 Backend
+- Laravel 11 Backend
     
-    Tailwind CSS for styling
+- Tailwind CSS for styling
     
-    Job listings with categories
+- Job listings with categories
     
-    Blade components for modular UI
+- Blade components for modular UI
     
-    Dynamic filtering with Alpine.js
+- Dynamic filtering with Alpine.js
 
-Contribution
+Contribution:
 Feel free to fork this project and submit pull requests!
 
-License
+License:
 This project is open-source and available under the MIT License.
