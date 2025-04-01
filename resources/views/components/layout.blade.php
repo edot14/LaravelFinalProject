@@ -35,7 +35,10 @@
                 <h2 class="text-xl font-bold mb-4">Featured Jobs</h2>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <!-- Job Card 1 -->
+                    <!--
+                        Below i manually added the Job Cards as i couldn't $slot content
+                        to work without messing up the stylesheet. I will fix this in the next
+                     -->
                     <div class="bg-gray-900 p-4 rounded-lg shadow">
                         <h3 class="text-lg font-semibold">PHP Developer</h3>
                         <p class="text-gray-400">Front End - Full Time - £60,000</p>
@@ -46,7 +49,6 @@
                         </div>
                     </div>
 
-                    <!-- Job Card 2 -->
                     <div class="bg-gray-900 p-4 rounded-lg shadow">
                         <h3 class="text-lg font-semibold">JavaScript Developer</h3>
                         <p class="text-gray-400">Back End - Full Time - £70,000</p>
@@ -57,7 +59,6 @@
                         </div>
                     </div>
 
-                    <!-- Job Card 3 -->
                     <div class="bg-gray-900 p-4 rounded-lg shadow">
                         <h3 class="text-lg font-semibold">React Developer</h3>
                         <p class="text-gray-400">Full Stack - Contract - £50,000</p>
@@ -68,7 +69,6 @@
                         </div>
                     </div>
 
-                    <!-- Job Card 4 -->
                     <div class="bg-gray-900 p-4 rounded-lg shadow">
                         <h3 class="text-lg font-semibold">UI/UX Designer</h3>
                         <p class="text-gray-400">Design - Full Time - £55,000</p>
