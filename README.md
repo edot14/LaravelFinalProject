@@ -2,7 +2,7 @@ My personal Laravel Project
 
 Overview:
 
-This is a job listing web application built with Laravel, Tailwind CSS, and Vite. This project follows the Laracasts 30 Days to Learn Laravel 11 tutorial while integrating modern front-end technologies.
+This is a job listing web application built with Laravel, Tailwind CSS, and Vite.
 
 Prerequisites:
 
