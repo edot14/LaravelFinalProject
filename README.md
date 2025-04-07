@@ -36,6 +36,7 @@ Laravel 11
         git clone https://github.com/edot14/LaravelFinalProject.git
         cd LaravelFinalProject
 
+-------------------------------------------
 2. Install Dependencies
 
 Install the PHP and JavaScript dependencies:
@@ -52,6 +53,8 @@ That means dependencies haven't been installed yet.
 Run this command:
 
         npm install
+
+-------------------------------------------
 
 3. Set Up the .env File
 
@@ -70,6 +73,7 @@ If you get this error:
 
 It means the .env file was not copied or created. Run the cp command above.
 
+-------------------------------------------
 
 4. Set Up SQLite Database (Optional if using SQLite).
 
@@ -103,6 +107,7 @@ Or manually:
 
         npm run dev.
 
+-------------------------------------------
 
 - Final set up includes: 
 
