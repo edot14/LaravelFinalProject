@@ -70,7 +70,9 @@ If you get this error:
 
 - It means the .env file was not copied or created. Run the cp command above.
 
+
 4. Set Up SQLite Database (Optional if using SQLite)
+
 
 - If you're using SQLite and get this error:
 
