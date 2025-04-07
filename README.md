@@ -43,56 +43,66 @@ Install the PHP and JavaScript dependencies:
         composer install
         npm install
 
-    // If you get this error after running npm run dev:
+If you get this error after running npm run dev:
 
 'vite' is not recognized as an internal or external command
 
 That means dependencies haven't been installed yet. 
 
-    // Run this command:
+Run this command:
 
         npm install
 
 3. Set Up the .env File
 
-Laravel needs a .env file for environment config. If it’s missing:
+Laravel needs a .env file for environment config. 
+If it’s missing:
+
         cp .env.example .env
 
 Then generate your application key:
+
         php artisan key:generate
 
 If you get this error:
-    // file_get_contents(.env): Failed to open stream: No such file or directory
-    // It means the .env file was not copied or created. Run the cp command above.
+
+"file_get_contents(.env): Failed to open stream: No such file or directory"
+
+It means the .env file was not copied or created. Run the cp command above.
 
 4. Set Up SQLite Database (Optional if using SQLite)
+
 If you're using SQLite and get this error:
-    // Database file at path [.../database/database.sqlite] does not exist.
+
+"Database file at path [.../database/database.sqlite] does not exist."
 
 Create the database file:
-    # From the project root
+
+From the project root
+    
         type nul > database/database.sqlite
 
 Or manually:
 
-Go to /database
+- Go to /database
 
-Create a file named database.sqlite
+- Create a file named database.sqlite
 
-Then update .env:
+- Then update .env:
 
         DB_CONNECTION=sqlite
         DB_DATABASE=./database/database.sqlite
 
-Now run: 
+- Now run: 
+
         php artisan migrate
 
-In another terminal, start Vite: 
+- In another terminal, start Vite: 
 
         npm run dev.
 
 
-Final set up includes: 
+- Final set up includes: 
 
         npm run dev
         php artisan serve
@@ -111,14 +121,15 @@ Troubleshooting.
 
         And restart npm run dev.
 
-Key not generating?
-    Make sure .env exists and run:
+- Key not generating?
+
+- Make sure .env exists and run:
 
         php artisan key:generate
 
-Still struggling?
+- Still struggling?
 
-    Make sure you’ve run:
+- Make sure you’ve run:
 
         composer install
         npm install
