@@ -43,7 +43,7 @@ Install the PHP and JavaScript dependencies:
         composer install
         npm install
 
-If you get this error after running npm run dev:
+- If you get this error after running npm run dev:
 
 'vite' is not recognized as an internal or external command
 
@@ -68,19 +68,19 @@ If you get this error:
 
 - "file_get_contents(.env): Failed to open stream: No such file or directory"
 
-- It means the .env file was not copied or created. Run the cp command above.
+It means the .env file was not copied or created. Run the cp command above.
 
 
-4. Set Up SQLite Database (Optional if using SQLite)
+4. Set Up SQLite Database (Optional if using SQLite).
 
 
 - If you're using SQLite and get this error:
 
-- "Database file at path [.../database/database.sqlite] does not exist."
+-   "Database file at path [.../database/database.sqlite] does not exist."
 
-- Create the database file:
+Create the database file:
 
-- From the project root
+From the project root
     
         type nul > database/database.sqlite
 
