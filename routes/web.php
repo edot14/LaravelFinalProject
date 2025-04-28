@@ -27,6 +27,7 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [SessionController::class, 'store']);
 });
 
+// TODO Fix
 Route::get('/logout', [SessionController::class, 'destroy'])->middleware('auth');
 
 
