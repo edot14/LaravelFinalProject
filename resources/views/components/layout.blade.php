@@ -7,13 +7,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Pixel Positions</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
     <body class="bg-black text-white font-roboto pb-20">
         <div class="px-10">
+
+            @if(session('success'))
+                <div
+                    x-data="{ show: true }"
+                    x-init="setTimeout(() => show = false, 3000)"
+                    x-show="show"
+                    x-transition
+                    class="bg-green-500 text-white p-4 rounded mb-6 text-center"
+                >
+                    {{ session('success') }}
+                </div>
+            @endif
+
+
             <nav class="flex justify-between items-center py-4 border-b border-white/10">
                 <div>
                     <a href="/">
@@ -34,9 +49,7 @@
 
                         <form method="POST" action="/logout">
                             @csrf
-                            @method('DELETE')
-
-                            <button>Log Out</button>
+                            <button type="submit">Log Out</button>
                         </form>
                     </div>
                 @endauth
