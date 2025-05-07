@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\TagController;
+use App\Http\Controllers\JobRssController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\RegisteredUserController;
@@ -27,8 +28,8 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [SessionController::class, 'store']);
 });
 
-// TODO Fix
-Route::post('/logout', [SessionController::class, 'destroy'])->middleware('auth');
+    Route::post('/logout', [SessionController::class, 'destroy'])->middleware('auth');
 
+    Route::get('/rss', [JobRssController::class, 'index']);
 
 
