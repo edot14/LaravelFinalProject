@@ -3,7 +3,7 @@
 
     <x-forms.form method="POST" action="/jobs">
         <x-forms.input label="Title" name="title" placeholder="Engineer..." />
-        <x-forms.input label="Salary" name="salary" placeholder="$60,000 GBP" />
+        <x-forms.input label="Salary" name="salary" placeholder="£60,000" />
         <x-forms.input label="Location" name="location" placeholder="Victoria, London" />
 
         <x-forms.select label="Schedule" name="schedule">
