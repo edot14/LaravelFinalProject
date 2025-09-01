@@ -15,6 +15,22 @@ Route::post('/jobs', [JobController::class, 'store'])->middleware('auth');
 
 Route::get('/search', SearchController::class);
 
+
+    Route::get('/jobs', [JobController::class, 'index'])->name('jobs');
+
+    Route::get('/careers', function () {
+        return view('careers');
+    })->name('careers');
+
+    Route::get('/salaries', function () {
+        return view('salaries');
+    })->name('salaries');
+
+    Route::get('/companies', function () {
+        return view('companies');
+    })->name('companies');
+
+
 // Where name equals the name your looking for. This is looking for name, not slug.
 // So when you want to manually create a tag, you can use the name field otherwise
 // Create a new route for slug if you want to use that.

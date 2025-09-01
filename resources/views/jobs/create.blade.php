@@ -11,7 +11,7 @@
             <option>Full Time</option>
         </x-forms.select>
 
-        <x-forms.input label="URL" name="url" placeholder="https://example.com/jobs/cleaner-wanted" />
+        <x-forms.input label="URL" name="url" placeholder="https://example.com/jobs/" />
         <x-forms.checkbox label="Feature (Costs Extra)" name="featured" />
 
         <x-forms.divider />
