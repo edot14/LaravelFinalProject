@@ -1,7 +1,7 @@
 <div class="container px-4 mx-auto">
     <nav class="relative flex items-center justify-between py-8">
         <a href="/">
-            <img src="/images/remarco_landscape_logo_transparent.png" alt="Remarco Logo" class="h-8">
+            <img src="/images/PositionPathwayLogo.png" alt="PP Logo" class="h-8">
         </a>
 
         <div class="lg:hidden">

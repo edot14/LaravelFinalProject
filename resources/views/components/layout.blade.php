@@ -6,7 +6,7 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pixel Positions</title>
+    <title>Position Pathway</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <script src="//unpkg.com/alpinejs" defer></script>
@@ -29,12 +29,13 @@
         <nav class="flex items-center justify-between py-4 border-b border-white/10">
             <div>
                 <a href="/">
-                    <img src="{{ Vite::asset('resources/images/logo.svg') }}" alt="">
+                    <img src="{{ Vite::asset('resources/images/position_pathway_youtube_transparent_cropped.png') }}"
+                        alt="position pathway logo" class="w-28">
                 </a>
             </div>
 
             <div class="space-x-6 font-bold">
-                <a href="{{ route('jobs') }}">Jobs</a>
+                <a href="{{ route('jobs') }}">Home</a>
                 <a href="{{ route('careers') }}">Careers</a>
                 <a href="{{ route('salaries') }}">Salaries</a>
                 <a href="{{ route('companies') }}">Companies</a>
