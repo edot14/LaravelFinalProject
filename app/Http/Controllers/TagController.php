@@ -8,8 +8,10 @@ class TagController extends Controller
 {
     public function __invoke(Tag $tag)
     {
-        // Jobs for the tag
+        // Get all tags
+        $tags = Tag::all();
 
+        // Jobs for the tag
         return view('results', ['jobs' => $tag->jobs]);
     }
 }
