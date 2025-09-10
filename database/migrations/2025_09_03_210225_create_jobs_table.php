@@ -26,3 +26,7 @@ return new class extends Migration
         });
     }
 };
+
+
+//TO DO - FIx the migration. The Database is not migrating properly. It is throwing an error
+//SQLSTATE[HY000]: General error: 1 table jobs already exists
