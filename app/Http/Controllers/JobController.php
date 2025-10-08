@@ -23,8 +23,8 @@ class JobController extends Controller
         $jobs = Job::latest()->with(['employer', 'tags'])->get()->groupBy('featured');
 
         return view('jobs.index', [
-            'jobs' => $jobs[0],
-            'featuredJobs' => $jobs[1],
+            'jobs' => $jobs->get(0,collect()), // To give jobs under key 0 or return an empty collection if none exist.
+            'featuredJobs' => $jobs->get(1, collect()), // fallback to empty collection
             'tags' => Tag::all(),
         ]);
     }
