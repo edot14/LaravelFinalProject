@@ -6,7 +6,7 @@ use App\Models\Tag;
 
 class TagController extends Controller
 {
-    public function __invoke(Tag $tag)
+    public function show(Tag $tag)
     {
         // Get all tags
         $tags = Tag::all();

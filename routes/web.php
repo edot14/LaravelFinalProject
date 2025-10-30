@@ -31,18 +31,18 @@ Route::get('/search', SearchController::class);
     })->name('companies');
 
 
-// Where name equals the name your looking for. This is looking for name, not slug.
-// So when you want to manually create a tag, you can use the name field otherwise
-// Create a new route for slug if you want to use that.
-Route::get('/tags/{tag:name}', TagController::class);
+    // route model binding to  instructs Laravel to automatically fetch a Tag model from your database
+    // where the name column matches the value provided in the URL
+    Route::get('/tags/{tag:name}', [TagController::class, 'show'])->name('tags.show');
 
-Route::middleware('guest')->group(function () {
+
+    Route::middleware('guest')->group(function () {
     Route::get('/register', [RegisteredUserController::class, 'create']);
     Route::post('/register', [RegisteredUserController::class, 'store']);
 
     Route::get('/login', [SessionController::class, 'create']);
     Route::post('/login', [SessionController::class, 'store']);
-});
+    });
 
     Route::post('/logout', [SessionController::class, 'destroy'])->middleware('auth');
 

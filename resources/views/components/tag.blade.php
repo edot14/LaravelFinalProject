@@ -1,15 +1,6 @@
 @props(['tag', 'size' => 'base'])
 
-@php
-    $classes = "bg-white/10 hover:bg-white/25 rounded-xl font-bold transition-colors duration-300";
-
-    if ($size === 'base') {
-        $classes .= " px-5 py-1 text-sm";
-    }
-
-    if ($size === 'small') {
-        $classes .= " px-3 py-1 text-2xs";
-    }
-@endphp
-
-<a href="/tags/{{ strtolower($tag->name) }}" class="{{ $classes }}">{{ ucwords($tag->name) }}</a>
+<a href="{{ route('tags.show', $tag->name) }}"
+    {{ $attributes->class(['inline-block rounded-lg text-gray-200 transition bg-gray-800 hover:bg-gray-700','px-5 py-1 text-sm' => $size === 'base','px-3 py-1 text-2xs' => $size === 'small',])}}>
+    {{ $tag->name }}
+</a>
