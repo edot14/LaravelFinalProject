@@ -37,7 +37,7 @@
             <div class="space-x-6 font-bold">
                 <a href="{{ route('jobs') }}">Home</a>
                 <a href="{{ route('careers') }}">Careers</a>
-                <a href="{{ route('salaries') }}">Salaries</a>
+                <!--<a href="{{ route('salaries') }}">Salaries</a> -->
                 <a href="{{ route('companies') }}">Companies</a>
             </div>
 

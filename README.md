@@ -10,8 +10,6 @@ This project marks a milestone in my learning. I started my coding journey in 20
 
 If you have any feedback, questions, or feature ideas, feel free to reach out! You can find me on LinkedIn – Elvis Maki (link is also on my GitHub profile).
 
-Thanks for stopping by — and happy coding! 🚀
-
 --------------------------------------------
 
 

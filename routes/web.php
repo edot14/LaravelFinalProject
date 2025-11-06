@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Job;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\JobRssController;
@@ -19,7 +20,8 @@ Route::get('/search', SearchController::class);
     Route::get('/jobs', [JobController::class, 'index'])->name('jobs');
 
     Route::get('/careers', function () {
-        return view('careers');
+        $jobs = Job::latest()->with(['employer', 'tags'])->take(9)->get();
+        return view('careers', ['jobs' => $jobs]);
     })->name('careers');
 
     Route::get('/salaries', function () {
