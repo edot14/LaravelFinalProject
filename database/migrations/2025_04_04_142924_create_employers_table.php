@@ -18,9 +18,10 @@ return new class extends Migration
 
             //Create the user_id, constrained assumes it references the id
             // & cascades on delete if the user is deleted
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            // UserId, Logo nullable to solve error.
+            $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade');
             $table->string('name');
-            $table->string('logo');
+            $table->string('logo')->nullable();
             $table->timestamps();
         });
     }

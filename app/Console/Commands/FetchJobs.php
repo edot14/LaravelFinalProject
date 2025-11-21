@@ -2,44 +2,35 @@
 
 namespace App\Console\Commands;
 
+use App\Services\JobFetcherService;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Http;
-use App\Models\Job;
+use Illuminate\Support\Facades\Log;
 
 class FetchJobs extends Command
 {
     protected $signature = 'jobs:fetch';
-    protected $description = 'Fetch jobs from Adzuna API and store in database';
+    protected $description = 'Fetch jobs from Adzuna API and store in database using JobFetcherService';
+
+    protected JobFetcherService $jobFetcherService;
+
+    public function __construct(JobFetcherService $jobFetcherService)
+    {
+        parent::__construct();
+        $this->jobFetcherService = $jobFetcherService;
+    }
 
     public function handle()
     {
-        $app_id = env('d70ffebf');
-        $app_key = env('9453788670f2dfa4ea38d3598bd2b064');
+        $this->info('Fetching jobs from Adzuna API...');
 
-        $response = Http::get("https://api.adzuna.com/v1/api/jobs/gb/search/1", [
-            'app_id' => $app_id,
-            'app_key' => $app_key,
-            'results_per_page' => 20,
-            'what' => 'developer',
-            'where' => 'London'
-        ]);
-
-        $jobs = $response->json()['results'] ?? [];
-
-        foreach ($jobs as $jobData) {
-            Job::updateOrCreate(
-                ['adzuna_id' => $jobData['id']],
-                [
-                    'title' => $jobData['title'],
-                    'company' => $jobData['company']['display_name'] ?? null,
-                    'location' => $jobData['location']['display_name'] ?? null,
-                    'description' => $jobData['description'],
-                    'url' => $jobData['redirect_url'],
-                    'salary' => $jobData['salary_min'] ?? null,
-                ]
-            );
+        try {
+            // You can pass parameters to the service if you want to make the command more flexible
+            // For example: $this->jobFetcherService->fetchAndStore($this->argument('what'), $this->argument('where'));
+            $this->jobFetcherService->fetchAndStore();
+            $this->info("Jobs fetched and stored successfully!");
+        } catch (\Exception $e) {
+            $this->error("An error occurred while fetching jobs: " . $e->getMessage());
+            Log::error("Error fetching jobs: " . $e->getMessage(), ['exception' => $e]);
         }
-
-        $this->info("Jobs fetched and stored successfully!");
     }
 }

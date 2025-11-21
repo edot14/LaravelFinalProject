@@ -8,6 +8,7 @@ use App\Http\Controllers\JobRssController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\RegisteredUserController;
+use App\Http\Controllers\EmployerController;
 
 Route::get('/', [JobController::class, 'index']);
 
@@ -28,9 +29,8 @@ Route::get('/search', SearchController::class);
         return view('salaries');
     })->name('salaries');
 
-    Route::get('/companies', function () {
-        return view('companies');
-    })->name('companies');
+    Route::get('/companies', [EmployerController::class, 'index'])->name('companies');
+    Route::get('/companies/{employer}', [EmployerController::class, 'show'])->name('companies.show');
 
 
     // route model binding to  instructs Laravel to automatically fetch a Tag model from your database

@@ -8,29 +8,29 @@
                     </div>
                     <h2
                         class="text-3xl font-medium leading-tight text-transparent md:text-4xl lg:text-5xl bg-clip-text bg-gradient-to-r from-gray-100 via-gray-200 to-gray-300">
-                        Explore Top Companies
+                        {{ $employer->name }}
                     </h2>
                 </div>
-
+                <div class="flex items-center mb-8">
+                    <x-employer-logo :width="100" />
+                    <div class="ml-6">
+                        <p class="text-lg text-gray-300">{{ $employer->location ?? 'Location not specified' }}</p>
+                        <p class="text-gray-400">{{ $employer->website ?? 'Website not available' }}</p>
+                    </div>
+                </div>
+                <div class="prose prose-invert text-gray-300">
+                    <p>{{ $employer->description ?? 'No description available.' }}</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="py-20">
         <div class="container px-4 mx-auto">
-            <x-section-heading>Available Jobs</x-section-heading>
+            <x-section-heading>Jobs at {{ $employer->name }}</x-section-heading>
             <div class="grid gap-8 mt-6 lg:grid-cols-3">
-                @foreach ($employers as $employer)
-                    <div class="p-4 bg-gray-800 rounded-lg shadow-lg">
-                        <div class="flex items-center mb-4">
-                            <x-employer-logo :width="60" />
-                            <div class="ml-4">
-                                <h3 class="text-xl font-semibold text-white">{{ $employer->name }}</h3>
-                                {{-- <p class="text-gray-400">{{ $employer->location }}</p> --}}
-                            </div>
-                        </div>
-                        <a href="/companies/{{ $employer->id }}" class="inline-block px-4 py-2 text-sm font-medium text-white bg-purple-600 rounded-md hover:bg-purple-700">View Company</a>
-                    </div>
+                @foreach ($employer->jobs as $job)
+                    <x-job-card :$job />
                 @endforeach
             </div>
         </div>
